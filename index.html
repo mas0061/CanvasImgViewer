@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>canvasImgViewer</title>
+</head>
+<body>
+	<canvas id="canvasImgViewer" width="500" height="500" style="border: 1px solid black;"></canvas>
+	<div>
+		<button id="fill" type="button">fit</button>
+		<button id="zoomIn" type="button">zoom in</button>
+		<button id="zoomOut" type="button">zoom out</button>
+		<button id="rotateL" type="button">rotate left</button>
+		<button id="rotateR" type="button">rotate right</button>
+		<button id="flipH" type="button">flip horizontal</button>
+		<button id="restore" type="button">take back</button>
+	</div>
+<script src="canvasImgViewer.js"></script>
+<script>
+var viewer = new CanvasImgViewer('canvasImgViewer', 'IMG_8803.jpg');
+
+document.getElementById('fill').addEventListener('click', function(e) {
+	viewer.fill();
+}, false);
+
+document.getElementById('rotateR').addEventListener('click', function(e) {
+	viewer.rotateR();
+}, false);
+
+document.getElementById('rotateL').addEventListener('click', function(e) {
+	viewer.rotateL();
+}, false);
+
+document.getElementById('zoomIn').addEventListener('click', function(e) {
+	viewer.zoomIn();
+}, false);
+
+document.getElementById('zoomOut').addEventListener('click', function(e) {
+	viewer.zoomOut();
+}, false);
+
+document.getElementById('flipH').addEventListener('click', function(e) {
+	viewer.flipH();
+}, false);
+
+document.getElementById('restore').addEventListener('click', function(e) {
+	viewer.restore();
+}, false);
+</script>
+</body>
+</html>
